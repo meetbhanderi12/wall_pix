@@ -41,48 +41,48 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCi-F5roX5PJ0_Mp9aQef5rLrxpugUU160',
-    appId: '1:606723884671:android:54cdb1e052767e746e214a',
-    messagingSenderId: '606723884671',
-    projectId: 'wall-pix-535f4',
-    storageBucket: 'wall-pix-535f4.firebasestorage.app',
+    apiKey: 'AIzaSyDqNUtkumXQjox1e2OIiT_zujM9N9FpCNA',
+    appId: '1:359129399832:android:d44f779887480ac872796d',
+    messagingSenderId: '359129399832',
+    projectId: 'wallpaper-5ea38',
+    storageBucket: 'wallpaper-5ea38.firebasestorage.app',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyCG_u30N1yoBzR8-pwT7fUuJcSKICB21mg',
-    appId: '1:606723884671:web:2b387772ede6f5866e214a',
-    messagingSenderId: '606723884671',
-    projectId: 'wall-pix-535f4',
-    authDomain: 'wall-pix-535f4.firebaseapp.com',
-    storageBucket: 'wall-pix-535f4.firebasestorage.app',
-    measurementId: 'G-1WJY2NT3PJ',
+    apiKey: 'AIzaSyDrnTANKgrQJ5RXCuJ9C62UNDwlnDmEoH4',
+    appId: '1:359129399832:web:fb383d1e1e6e0a5872796d',
+    messagingSenderId: '359129399832',
+    projectId: 'wallpaper-5ea38',
+    authDomain: 'wallpaper-5ea38.firebaseapp.com',
+    storageBucket: 'wallpaper-5ea38.firebasestorage.app',
+    measurementId: 'G-4JXC95DL7R',
   );
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCG_u30N1yoBzR8-pwT7fUuJcSKICB21mg',
-    appId: '1:606723884671:web:6e0701d024310c126e214a',
-    messagingSenderId: '606723884671',
-    projectId: 'wall-pix-535f4',
-    authDomain: 'wall-pix-535f4.firebaseapp.com',
-    storageBucket: 'wall-pix-535f4.firebasestorage.app',
-    measurementId: 'G-F1J6X72WWG',
+    apiKey: 'AIzaSyDrnTANKgrQJ5RXCuJ9C62UNDwlnDmEoH4',
+    appId: '1:359129399832:web:07b37b1f649664b272796d',
+    messagingSenderId: '359129399832',
+    projectId: 'wallpaper-5ea38',
+    authDomain: 'wallpaper-5ea38.firebaseapp.com',
+    storageBucket: 'wallpaper-5ea38.firebasestorage.app',
+    measurementId: 'G-6B7HCZZ2B9',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCPH63lLRQDhYGAJuiRNQmBLeK0-23ngvM',
-    appId: '1:606723884671:ios:13a2a2bc36764ded6e214a',
-    messagingSenderId: '606723884671',
-    projectId: 'wall-pix-535f4',
-    storageBucket: 'wall-pix-535f4.firebasestorage.app',
+    apiKey: 'AIzaSyAILIcVlIehDc2OI7SG8CsiL7Ua_lNPWuU',
+    appId: '1:359129399832:ios:144772a0b7deddd672796d',
+    messagingSenderId: '359129399832',
+    projectId: 'wallpaper-5ea38',
+    storageBucket: 'wallpaper-5ea38.firebasestorage.app',
     iosBundleId: 'com.example.wallpaper',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCPH63lLRQDhYGAJuiRNQmBLeK0-23ngvM',
-    appId: '1:606723884671:ios:13a2a2bc36764ded6e214a',
-    messagingSenderId: '606723884671',
-    projectId: 'wall-pix-535f4',
-    storageBucket: 'wall-pix-535f4.firebasestorage.app',
+    apiKey: 'AIzaSyAILIcVlIehDc2OI7SG8CsiL7Ua_lNPWuU',
+    appId: '1:359129399832:ios:144772a0b7deddd672796d',
+    messagingSenderId: '359129399832',
+    projectId: 'wallpaper-5ea38',
+    storageBucket: 'wallpaper-5ea38.firebasestorage.app',
     iosBundleId: 'com.example.wallpaper',
   );
 

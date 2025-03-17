@@ -1,5 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import 'package:wallpaper/database/wallpaper_model.dart';
 
 class DatabaseHelper {
 
@@ -31,7 +32,7 @@ class DatabaseHelper {
     return await openDatabase(
         path,
         version: 1,
-        onCreate: _onCreate,
+        onCreate: _onCreate
     );
   }
 
@@ -49,7 +50,27 @@ class DatabaseHelper {
        ) 
        '''
     );
-    print("Database created");
+    print("Database Create successfully");
+
   }
+
+  Future<int> insertFavoriteImage (WallpaperModel wall)async{
+    Database db  = await instance.database;
+    print("imahe hh ---> ${wall.imgUrl}");
+    return await db.insert(tbName, wall.toMap());
+  }
+
+  Future<List<WallpaperModel>> fetchFavoriteImage()async{
+    Database db = await instance.database;
+    final List<Map<String , dynamic>> wall = await db.query(tbName);
+    return wall.map((e) => WallpaperModel.fromJson(e),).toList();
+
+  }
+
+  Future<int> deleteFavoriteImages(int imageId)async{
+    Database db = await instance.database;
+    return db.delete(tbName , where: 'id = ?' , whereArgs: [imageId] );
+  }
+
 
 }

@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:wallpaper/main_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:wallpaper/repo/auth_services.dart';
+
 late SharedPreferences sp;
 final FirebaseAuth auth = FirebaseAuth.instance;
 final GoogleSignIn _googleSignIn = GoogleSignIn();
@@ -45,12 +48,23 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),);
 
-                  try {
+                  AuthService auth = AuthService();
+                  auth.signInWithGoogle().then((value) async {
+                    sp = await SharedPreferences.getInstance();
+                    sp.setBool("IsGooglelogdIn", true) ;
+                    Navigator.pop(context);
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainPage(),));
+                  },);
+                  print("Login Successfully---------->");
+
+                /*  try {
                     final GoogleSignInAccount? googleSignInAccount = await _googleSignIn.signIn();
                     if (googleSignInAccount != null) {
-
-                      final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount.authentication;
-                      final AuthCredential authCredential = GoogleAuthProvider.credential(
+                      Fluttertoast.showToast(msg: "Something Went Wrong");
+                      return;
+                    }
+                      final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount!.authentication;
+                      final OAuthCredential authCredential = GoogleAuthProvider.credential(
                         accessToken: googleSignInAuthentication.accessToken,
                         idToken: googleSignInAuthentication.idToken,
                       );
@@ -64,13 +78,11 @@ class _LoginPageState extends State<LoginPage> {
 
 
 
-                    } else {
-                      print("Google Sign-In aborted by user");
-                    }
+
                   } catch (e) {
                     print("Error during Google Sign-In: $e");
                   }
-
+*/
                 },
                 child: Container(
                   height: MediaQuery.of(context).size.height*7/100,

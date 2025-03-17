@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,7 +19,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    googleSignHandle();
+    Future.delayed(Duration(seconds: 3),() {
+      googleSignHandle();
+      print("object------------------------->");
+    },);
+
 
   }
   void googleSignHandle()async {
@@ -51,15 +54,15 @@ class _SplashScreenState extends State<SplashScreen> {
             height: MediaQuery.of(context).size.height*100/100,
             decoration: BoxDecoration(
               color: Colors.black,
-              image: DecorationImage(image: AssetImage("assets/rr.jpg"),fit: BoxFit.cover)
+              image: DecorationImage(image: AssetImage("assets/splash.jpg"),fit: BoxFit.cover)
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
               Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Text("3D Wallpaper",style: TextStyle(color: Colors.white,fontSize: 18,fontStyle: FontStyle.italic,fontWeight: FontWeight.bold),),
+                padding: const EdgeInsets.all(20.0),
+                child: Text("Wall Pix",style: TextStyle(color: Colors.white,fontSize: 18,fontStyle: FontStyle.italic,fontWeight: FontWeight.bold),),
               )
             ],),
           ),

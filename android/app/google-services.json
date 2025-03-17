@@ -1,32 +1,13 @@
 {
   "project_info": {
-    "project_number": "606723884671",
-    "project_id": "wall-pix-535f4",
-    "storage_bucket": "wall-pix-535f4.firebasestorage.app"
+    "project_number": "359129399832",
+    "project_id": "wallpaper-5ea38",
+    "storage_bucket": "wallpaper-5ea38.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:606723884671:android:0ceed19f26263a8c6e214a",
-        "android_client_info": {
-          "package_name": "com.example.wall_pix"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCi-F5roX5PJ0_Mp9aQef5rLrxpugUU160"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": []
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:606723884671:android:54cdb1e052767e746e214a",
+        "mobilesdk_app_id": "1:359129399832:android:d44f779887480ac872796d",
         "android_client_info": {
           "package_name": "com.example.wallpaper"
         }
@@ -34,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCi-F5roX5PJ0_Mp9aQef5rLrxpugUU160"
+          "current_key": "AIzaSyDqNUtkumXQjox1e2OIiT_zujM9N9FpCNA"
         }
       ],
       "services": {

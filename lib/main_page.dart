@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -12,6 +13,7 @@ import 'package:wallpaper/modal/modal.dart';
 import 'package:wallpaper/preview_page.dart';
 import 'package:wallpaper/repo/colors.dart';
 import 'package:wallpaper/repo/repository.dart';
+import 'package:wallpaper/screens/favorite_image_screen.dart';
 
 import 'login_page.dart';
   FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
@@ -98,18 +100,35 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(onPressed: () async{
-        var r=await FirebaseMessaging.instance.getToken();
-        print(r);
-        print("oko");
-      },),
+      // floatingActionButton: FloatingActionButton(onPressed: () async{
+      //   var r=await FirebaseMessaging.instance.getToken();
+      //   print(r);
+      //   print("oko");
+      // },),
       backgroundColor: ColorConstant.cwGradient2,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         // centerTitle: true,
+        toolbarHeight: 70,
         actions: [
-          // Icon(Icons.favorite_border)
+           InkWell(
+             onTap: () {
+               Navigator.push(context, MaterialPageRoute(builder: (context) => FavoriteImageScreen(),));
+             },
+             child: Padding(
+               padding: const EdgeInsets.all(10.0),
+               child: Container(
+                 height: 40,
+                   width: 40,
+                   alignment: Alignment.center,
+                   decoration: BoxDecoration(
+                     color: Colors.red,
+                     shape: BoxShape.circle
+                   ),
+                   child: Icon(CupertinoIcons.heart_circle_fill , color: Colors.white,size: 30,)),
+             ),
+           )
         ],
         title: const Row(
           mainAxisSize: MainAxisSize.min,
@@ -260,6 +279,7 @@ class _MainPageState extends State<MainPage> {
                           crossAxisCount: 2,
                           itemBuilder: (context, index) {
                             double height = (index % 10 + 1) * 100;
+                            // print("Image NBAme ----> ${snapshot.data![index].imagePotraitPath}");
                             return GestureDetector(
                               onTap: () {
 
