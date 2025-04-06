@@ -1,4 +1,6 @@
 
+import 'dart:io';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,7 @@ import 'package:wallpaper/repo/repository.dart';
 import 'modal/addmodel.dart';
 import 'package:provider/provider.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:wallpaper_manager_flutter/wallpaper_manager_flutter.dart';
 
 class PreviewPage extends StatefulWidget {
   final String imageUrl;
@@ -278,21 +281,34 @@ class _PreviewPageState extends State<PreviewPage> {
                           TextButton(onPressed: () async {
 
                             // int location = WallpaperManager.HOME_SCREEN;
-                            // var file = await DefaultCacheManager().getSingleFile(widget.imageUrl);
+                             var file = await DefaultCacheManager().getSingleFile(widget.imageUrl);
                             // bool result =
                             // (await WallpaperManager.setWallpaperFromFile(file.path, location));
                             // Navigator.pop(context);
-                            //
+
+                            int location = WallpaperManagerFlutter.HOME_SCREEN;
+                             // if (Platform.isAndroid) {
+                             //   Future.delayed(Duration(milliseconds: 100), () {
+                             //     Process.run('input', ['keyevent', 'KEYCODE_HOME']); // Simulate Home button press
+                             //   });
+                             // }
+                            await WallpaperManagerFlutter().setwallpaperfromFile(file, location);
+                             print("Set the Wallpaper@@@@@@@@@");
+                             Navigator.pop(context);
+
 
                           }, child: Text("Home Screen",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w700,fontStyle: FontStyle.italic),)),
                           Divider(color: Colors.black,),
                           TextButton(onPressed: () async {
                             //
                             // int location = WallpaperManager.LOCK_SCREEN;
-                            // var file = await DefaultCacheManager().getSingleFile(widget.imageUrl);
+                             var file = await DefaultCacheManager().getSingleFile(widget.imageUrl);
                             // bool result =
                             // (await WallpaperManager.setWallpaperFromFile(file.path, location));
                             // Navigator.pop(context);
+                             int location = WallpaperManagerFlutter.LOCK_SCREEN;
+                             WallpaperManagerFlutter().setwallpaperfromFile(file, location);
+                             Navigator.pop(context);
 
 
                           }, child: Text("Lock Screen",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w700,fontStyle: FontStyle.italic),)),
@@ -300,10 +316,13 @@ class _PreviewPageState extends State<PreviewPage> {
                           TextButton(onPressed: () async {
 
                             // int location = WallpaperManager.BOTH_SCREEN;
-                            // var file = await DefaultCacheManager().getSingleFile(widget.imageUrl);
+                             var file = await DefaultCacheManager().getSingleFile(widget.imageUrl);
                             // bool result =
                             // (await WallpaperManager.setWallpaperFromFile(file.path, location));
                             // Navigator.pop(context);
+                             int location = WallpaperManagerFlutter.BOTH_SCREENS;
+                             WallpaperManagerFlutter().setwallpaperfromFile(file, location);
+                             Navigator.pop(context);
 
 
                           }, child: Text("Home & Lock Both",style: TextStyle(color: Colors.black,fontWeight: FontWeight.w700,fontStyle: FontStyle.italic),)),
